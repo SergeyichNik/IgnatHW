@@ -1,0 +1,44 @@
+.btn {
+    margin-right: 4px;
+    background-color: red;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: red;
+
+}
+.affairall {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    background-color: gold;
+}
+
+
+.btn:hover {
+    transform: scale(105%);
+}
+
+.delBtn {
+    font-size: 15px;
+    border: none;
+    border-radius: 7px;
+    background-color: white;
+    margin-right: 10px;
+    color: red;
+    transition: all 1s;
+}
+
+.delBtn:hover {
+    transform: rotate(720deg);
+    background-color:rgba(250, 12, 12, 0.01);
+    border-radius: 4px;
+}
+
+.affair {
+    display: flex;
+}
+
+.affair:hover {
+    background-color:rgba(250, 12, 12, 0.2);
+    transition: all 0.8s;
+}
