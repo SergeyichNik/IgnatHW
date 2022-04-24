@@ -2,9 +2,13 @@ import React, {useState} from 'react'
 import {homeWorkReducer} from './bll/homeWorkReducer'
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
 
-// export type UserType =
+export type UserType = {
+    _id: number,
+    name: string,
+    age: number
+}
 
-const initialPeople = [
+const initialPeople: UserType[] = [
     {_id: 0, name: 'Кот', age: 3},
     {_id: 1, name: 'Александр', age: 66},
     {_id: 2, name: 'Коля', age: 16},
@@ -14,33 +18,47 @@ const initialPeople = [
 ]
 
 function HW8() {
-    const [people, setPeople] = useState<any>(initialPeople) // need to fix any
+    const [people, setPeople] = useState<UserType[]>(initialPeople) // need to fix any
 
     // need to fix any
-    const finalPeople = people.map((p: any) => (
-        <div key={p._id}>
-            some name, age
+    const table = {
+        display: 'flex',
+        justifyContent: 'space-between',
+        margin: '5px ',
+
+    }
+    const Hw8Wrapper = {
+        width: '350px',
+        height: 'fitContent',
+        margin: '20px 0 20px 0',
+        padding: '20px 20px',
+        borderRadius: '5px',
+        boxShadow: '3px 3px 10px grey',
+
+    }
+
+    const finalPeople = people.map((p) => (
+        <div style={table} key={p._id} >
+            <div>{p.name}</div>
+            <div>{p.age}</div>
         </div>
     ))
 
-    const sortUp = () => setPeople(homeWorkReducer(initialPeople, {type: 'sort', payload: 'up'}))
-
+    const btnKit = [
+        {name: 'sort up', callback: () => setPeople(homeWorkReducer(initialPeople, {type: "SORT", payload: "UP"}))},
+        {name: 'sort down', callback: () => setPeople(homeWorkReducer(initialPeople, {type: "SORT", payload: "DOWN"}))},
+        {name: 'check 18', callback: () => setPeople(homeWorkReducer(initialPeople, {type: "CHECK", payload: 18}))}
+    ]
+    const mapBtn = btnKit.map((item, index) => <SuperButton onClick={item.callback}  key={index}>{item.name}</SuperButton>)
     return (
-        <div>
-            <hr/>
+        <div style={Hw8Wrapper}>
             homeworks 8
 
-            {/*should work (должно работать)*/}
             {finalPeople}
 
-            <div><SuperButton onClick={sortUp}>sort up</SuperButton></div>
-            <div>sort down</div>
-            check 18
+            {mapBtn}
 
-            <hr/>
-            {/*для личного творчества, могу проверить*/}
-            {/*<AlternativePeople/>*/}
-            <hr/>
+
         </div>
     )
 }

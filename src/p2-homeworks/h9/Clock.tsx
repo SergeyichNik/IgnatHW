@@ -1,31 +1,42 @@
 import React, {useState} from 'react'
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
 
+const getZero = (num: number) => {
+   return  num < 10 ? '0' + num : num
+}
+
 function Clock() {
     const [timerId, setTimerId] = useState<number>(0)
-    const [date, setDate] = useState<Date>()
+    const [date, setDate] = useState<Date>(new Date)
     const [show, setShow] = useState<boolean>(false)
 
     const stop = () => {
-        // stop
+        clearInterval(timerId)
     }
     const start = () => {
         stop()
         const id: number = window.setInterval(() => {
-            // setDate
+             setDate(new Date)
         }, 1000)
         setTimerId(id)
     }
 
     const onMouseEnter = () => {
-        // show
+        setShow(true)
     }
     const onMouseLeave = () => {
-        // close
+        setShow(false)
     }
+    const hours = getZero(date.getHours())
+    const minutes = getZero(date.getMinutes())
+    const seconds = getZero(date.getSeconds())
 
-    const stringTime = 'Time' // fix with date
-    const stringDate = 'Date' // fix with date
+    const day = getZero(date.getDate())
+    const month = getZero(date.getMonth())
+    const year = date.getFullYear()
+
+    const stringTime = `${hours}:${minutes}:${seconds}`// fix with date
+    const stringDate = `${day}.${month}.${year}`// fix with date
 
     return (
         <div>
@@ -42,9 +53,11 @@ function Clock() {
                 </div>
             )}
 
-            <SuperButton onClick={start}>start</SuperButton>
-            <SuperButton onClick={stop}>stop</SuperButton>
+            <div>
+                <SuperButton onClick={start}>start</SuperButton>
+                <SuperButton onClick={stop}>stop</SuperButton>
 
+            </div>
         </div>
     )
 }

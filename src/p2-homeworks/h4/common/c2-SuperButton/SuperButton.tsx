@@ -16,9 +16,23 @@ const SuperButton: React.FC<SuperButtonPropsType> = (
 ) => {
     const finalClassName = `${red ? s.red : s.default} ${className}`
 
+    const styleBtn = {
+        height: '2rem',
+        margin: '10px 5px',
+        backgroundColor: '#6bb0ed',
+        fontSize: '15px',
+        lineHeight: '20px',
+        color: '#5e3739',
+        border: 'none',
+        borderRadius: '5px',
+        boxShadow: '2px 2px 5px grey, inset 5px 5px 25px #f01f5071',
+        cursor: 'pointer',
+    }
+
     return (
         <button
             className={finalClassName}
+            style={styleBtn}
             {...restProps} // отдаём кнопке остальные пропсы если они есть (children там внутри)
         />
     )

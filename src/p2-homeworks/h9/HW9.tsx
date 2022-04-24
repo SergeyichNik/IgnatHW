@@ -2,18 +2,19 @@ import React from 'react'
 import Clock from './Clock'
 
 function HW9() {
+    const wrapper = {
+        width: '350px',
+        height: 'fit-content',
+        margin: '20px 0 20px 0',
+        padding: '20px 20px',
+        borderRadius: '5px',
+        boxShadow: '3px 3px 10px grey',
+
+    }
     return (
-        <div>
-            <hr/>
+        <div style={wrapper}>
             homeworks 9
-
-            {/*should work (должно работать)*/}
             <Clock/>
-
-            <hr/>
-            {/*для личного творчества, могу проверить*/}
-            {/*<AlternativeClock/>*/}
-            <hr/>
         </div>
     )
 }
