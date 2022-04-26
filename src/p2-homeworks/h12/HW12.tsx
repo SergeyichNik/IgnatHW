@@ -1,23 +1,38 @@
 import React from "react";
 import s from "./HW12.module.css";
+import SuperSelect from "../h7/common/c5-SuperSelect/SuperSelect";
+import SuperRadio from "../h7/common/c6-SuperRadio/SuperRadio";
+import {useDispatch, useSelector} from "react-redux";
+import {selectThemeState, setCurrentTheme} from "../h10/bll/loadingReducer";
 
-const themes = ['dark', 'red', 'some'];
 
 function HW12() {
-    const theme = 'some'; // useSelector
-
+    const {themeKit, currentTheme} = useSelector(selectThemeState)
+    const dispatch = useDispatch()
     // useDispatch, onChangeCallback
+    const wrapper = {
+        width: '350px',
+        height: 'fitContent',
+        margin: '20px 0 60px 0',
+        padding: '20px 20px',
+        borderRadius: '5px',
+
+    }
+
+    const onChangeHandler = (currentTheme: string) => {
+        console.log(currentTheme)
+        dispatch(setCurrentTheme(currentTheme))
+    }
 
     return (
-        <div className={s[theme]}>
+        <div style={wrapper} className={s[currentTheme]}>
             <hr/>
-            <span className={s[theme + '-text']}>
+            <span className={s[currentTheme + '-text']}>
                 homeworks 12
             </span>
 
             {/*should work (должно работать)*/}
-            {/*SuperSelect or SuperRadio*/}
-
+            <SuperSelect width={'130'} value={currentTheme} onChangeOption={onChangeHandler} options={themeKit}/>
             <hr/>
         </div>
     );

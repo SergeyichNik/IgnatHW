@@ -1,5 +1,6 @@
 .dark {
     background: dimgrey;
+    box-shadow: 3px 3px 10px grey;
 }
 
 .dark-text {
@@ -8,16 +9,36 @@
 
 .red {
     background: lightcoral;
+    box-shadow: 3px 3px 10px grey;
 }
 
 .red-text {
     color: aqua;
 }
 
-.some {
+.green {
     background: lightgreen;
+    box-shadow: 3px 3px 10px grey;
 }
 
-.some-text {
+.green-text {
     color: darkslateblue;
+}
+
+.light {
+    box-shadow: inset 5px 5px 80px darkgrey, 3px 3px 10px grey;
+}
+
+.purpleBlue {
+    background: #4fd9f7;
+    box-shadow: inset 10px 10px 80px #701bf7, 3px 3px 10px grey;
+}
+
+.redYellow {
+    background: #f4f71b;
+    box-shadow: inset 10px 10px 80px #f72a1b, 3px 3px 10px grey;
+}
+
+span {
+    font-weight: 900;
 }

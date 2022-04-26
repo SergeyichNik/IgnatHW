@@ -5,18 +5,20 @@ type DefaultSelectPropsType = DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectE
 type SuperSelectPropsType = DefaultSelectPropsType & {
     options?: any[]
     onChangeOption?: (option: any) => void
+    width?: string
 }
 
 const SuperSelect: React.FC<SuperSelectPropsType> = (
     {
         options,
+        width,
         onChange, onChangeOption,
         ...restProps
     }
 ) => {
 
-    const mappedOptions: any[] | undefined = options?.map((item, index)=> {
-        return  <option key={index}>{item}</option>
+    const mappedOptions: any[] | undefined = options?.map((item, index) => {
+        return <option key={index}>{item}</option>
 
     });
 
@@ -26,7 +28,7 @@ const SuperSelect: React.FC<SuperSelectPropsType> = (
     }
 
     const selectStyle = {
-        width: '40px',
+        width: width + 'px',
         height: '30px',
         fontSize: '20px',
         fontWeight: '500',
