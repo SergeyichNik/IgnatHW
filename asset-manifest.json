@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/IgnatHW/static/css/main.1824acc2.css",
-    "main.js": "/IgnatHW/static/js/main.9ae5a5ce.js",
+    "main.js": "/IgnatHW/static/js/main.664263af.js",
     "static/media/Circles-menu-3.gif": "/IgnatHW/static/media/Circles-menu-3.20a21d3c5d14bc614403.gif",
     "index.html": "/IgnatHW/index.html",
     "main.1824acc2.css.map": "/IgnatHW/static/css/main.1824acc2.css.map",
-    "main.9ae5a5ce.js.map": "/IgnatHW/static/js/main.9ae5a5ce.js.map"
+    "main.664263af.js.map": "/IgnatHW/static/js/main.664263af.js.map"
   },
   "entrypoints": [
     "static/css/main.1824acc2.css",
-    "static/js/main.9ae5a5ce.js"
+    "static/js/main.664263af.js"
   ]
 }
