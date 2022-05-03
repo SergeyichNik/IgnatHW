@@ -13,14 +13,13 @@ function HW12() {
     const wrapper = {
         width: '350px',
         height: 'fitContent',
-        margin: '20px 0 60px 0',
+        margin: '20px 0 20px 0',
         padding: '20px 20px',
         borderRadius: '5px',
 
     }
 
     const onChangeHandler = (currentTheme: string) => {
-        console.log(currentTheme)
         dispatch(setCurrentTheme(currentTheme))
     }
 
